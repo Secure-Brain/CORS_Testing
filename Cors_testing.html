@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h2>CORS Test</h2>
+
+<script>
+const url = "https://target-site.com/api";
+
+fetch(url, {
+  method: "GET",
+  credentials: "include"
+})
+.then(res => {
+  console.log("Status:", res.status);
+  console.log("Headers:", [...res.headers.entries()]);
+  return res.text();
+})
+.then(data => console.log("Response:", data))
+.catch(err => console.error("Error:", err));
+</script>
+
+</body>
+</html>
